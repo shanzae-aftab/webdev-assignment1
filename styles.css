@@ -110,6 +110,14 @@ nav ul li a:hover {
     margin: 40px auto;
     max-width: 1200px;
 }
+.kitten-video {
+    width: 50%;
+    height: 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    align-items: center ;
+
+}
 
 section {
     margin-bottom: 60px;
