@@ -1,26 +1,32 @@
 body {
-    font-family: garamond, serif;
+    font-family: 'Calibri', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #708090;
+    background: linear-gradient(120deg, #283048, #859398);
     color: #fdfefe;
-    /* Set font color for the whole body */
+    overflow-x: hidden;
 }
 
+/* Navigation bar */
 nav {
-    background-color: #A4C495;
+    background-color: rgba(164, 196, 149, 0.9);
     color: #fdfefe;
-    /* Override font color for nav */
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px RGBA(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-radius: 10px;
+    border-radius: 0 0 15px 15px;
+    backdrop-filter: blur(10px); /* Adds blur effect to navbar */
+    transition: background-color 0.5s ease;
+}
+
+nav:hover {
+    background-color: rgba(164, 196, 149, 1);
 }
 
 nav ul {
@@ -31,39 +37,157 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: #fdfefe;
-    /* Set font color for nav links */
     text-decoration: none;
-    padding: 10px 10px;
-    text-transform: lowercase;
-    transition: background-color 0.9s ease, color 0.9s ease;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.4s, transform 0.4s;
 }
 
 nav ul li a:hover {
-    background-color: #C2CDA5;
-    color: RGB(194, 205, 165);
-    border-radius: 5px;
+    color: #C2CDA5;
+    transform: scale(1.1);
+    border-radius: 10px;
+}
+
+/* Intro Section */
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('profile-bg.jpg') no-repeat center center/cover;
+    color: #fdfefe;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.intro p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container {
-    padding: 60px 20px 20px;
-    /* Adjusted padding to account for fixed nav */
+    padding: 100px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
 }
 
-h2,
-h3,
-p,
-li {
-    color: #fdfefe;
-    /* Ensure all text elements use the font color */
+section {
+    margin-bottom: 60px;
 }
 
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background-color: #fdfefe;
+    display: block;
+    margin: 10px auto;
+    border-radius: 3px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+section ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Video section styling */
 video {
     width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Add hover effects for skills and projects */
+.skills ul li:hover, .projects ul li:hover, .side-projects ul li:hover, .certifications ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Social media hover effect */
+.social-media-feed a {
+    color: #C2CDA5;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.5s, transform 0.5s;
+}
+
+.social-media-feed a:hover {
+    color: #fdfefe;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #283048;
+    color: #fdfefe;
+    border-radius: 15px 15px 0 0;
+    margin-top: 40px;
 }
